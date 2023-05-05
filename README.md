@@ -6,6 +6,4 @@ Vigenere Cypher project for CIS-7 Discrete Structures Class.
 
 ## 05/04/2023
 
-```
-Reviewed git flow commands.
-```
+- Reviewed git flow commands.

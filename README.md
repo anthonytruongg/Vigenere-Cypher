@@ -1,6 +1,7 @@
 # Vigenere-Cypher
-
 Vigenere Cypher project for CIS-7 Discrete Structures Class.
+
+# Web Development Final Project - *ProfessorChoice*
 
 # Case Project Details
 
@@ -30,8 +31,8 @@ git clone https://github.com/anthonytruongg/Vigenere-Cypher.git
 
 # Team "Gigga-Lyte"
 
-Anthony Truong
-Nour Siwar
+- Anthony Truong
+- Nour Siwar
 
 # Documentation
 

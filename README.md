@@ -11,7 +11,11 @@ Vigenere Cypher project for CIS-7 Discrete Structures Class.
 # 05/09/2023 - Anthony Truong
 
 - Write up initial main and encrypt function.
-- Finished encrypt function pseudocode / flowchart.
+- Finished encrypt function flowchart.
+
+- Build decryption function
+- Add menu functionality
+- Finished decrypt function flowchart.
 
 ## What problems are you solving?
 

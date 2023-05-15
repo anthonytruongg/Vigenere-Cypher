@@ -125,40 +125,65 @@ string encrypt(string message, string keyword)
     // Convert message to integer
     for (int i = 0; i < message.length(); i++)
     {
-        messageArray[i] = message[i] - 65;
+        if (message[i] == ' ')
+            messageArray[i] = -1; // Use -1 to represent spaces
+        else
+            messageArray[i] = message[i] - 65;
     }
 
     // Create userKeyArray
     // userKeyArray is the keyword repeated until it is the same length as the message.
-    int j = 0;
+     int j = 0;
     for (int i = 0; i < message.length(); i++)
     {
-        if (j == keyword.length())
+        if (messageArray[i] == -1)
         {
-            j = 0;
+            userKeyArray[i] = -1; // Preserve spaces in userKeyArray
         }
-        userKeyArray[i] = keyword[j];
-        j++;
+        else
+        {
+            if (j == keyword.length())
+            {
+                j = 0;
+            }
+            userKeyArray[i] = keyword[j];
+            j++;
+        }
     }
 
     // Convert userKeyArray to integer
     for (int i = 0; i < message.length(); i++)
     {
-        userKeyArray[i] = userKeyArray[i] - 65;
+        if (userKeyArray[i] != -1)
+            userKeyArray[i] = userKeyArray[i] - 65;
     }
 
 
     // Encrypt message
     for (int i = 0; i < message.length(); i++)
     {
-        encryptedMessageArray[i] = (messageArray[i] + userKeyArray[i]) % 26;
+        if (messageArray[i] == -1)
+        {
+            encryptedMessageArray[i] = -1; // Preserve spaces in encryptedMessageArray
+        }
+        else
+        {
+            encryptedMessageArray[i] = (messageArray[i] + userKeyArray[i]) % 26;
+        }
     }
 
     // Convert encryptedMessageInt to encryptedMessage
     string encryptedMessage;
     for (int i = 0; i < message.length(); i++)
     {
-        encryptedMessage += (char)(encryptedMessageArray[i] + 65);
+        if (encryptedMessageArray[i] == -1)
+        {
+            encryptedMessage += " "; // Add spaces to the encrypted message
+        }
+        else
+        {
+            encryptedMessage += (char)(encryptedMessageArray[i] + 65);
+        }
     }
 
     // Return encryptedMessage
@@ -200,7 +225,10 @@ string decrypt(string message, string keyword)
     // Convert message to integer
     for (int i = 0; i < message.length(); i++)
     {
-        messageArray[i] = message[i] - 65;
+        if (message[i] == ' ')
+            messageArray[i] = -1; // Use -1 to represent spaces
+        else
+            messageArray[i] = message[i] - 65;
     }
 
     // Create userKeyArray
@@ -208,31 +236,54 @@ string decrypt(string message, string keyword)
     int j = 0;
     for (int i = 0; i < message.length(); i++)
     {
-        if (j == keyword.length())
+        if (messageArray[i] == -1)
         {
-            j = 0;
+            userKeyArray[i] = -1; // Preserve spaces in userKeyArray
         }
-        userKeyArray[i] = keyword[j];
-        j++;
+        else
+        {
+            if (j == keyword.length())
+            {
+                j = 0;
+            }
+            userKeyArray[i];
+            userKeyArray[i] = keyword[j];
+            j++;
+        }
     }
 
-    // Convert userKeyArray to integer
+   // Convert userKeyArray to integer
     for (int i = 0; i < message.length(); i++)
     {
-        userKeyArray[i] = userKeyArray[i] - 65;
+        if (userKeyArray[i] != -1)
+            userKeyArray[i] = userKeyArray[i] - 65;
     }
 
     // Decrypt message
     for (int i = 0; i < message.length(); i++)
     {
-        decryptedMessageArray[i] = (messageArray[i] - userKeyArray[i] + 26) % 26;
+        if (messageArray[i] == -1)
+        {
+            decryptedMessageArray[i] = -1; // Preserve spaces in decryptedMessageArray
+        }
+        else
+        {
+            decryptedMessageArray[i] = (messageArray[i] - userKeyArray[i] + 26) % 26;
+        }
     }
 
-    // Convert decryptedMessageInt to decryptedMessage
+    // Convert decryptedMessageArray to decryptedMessage
     string decryptedMessage;
     for (int i = 0; i < message.length(); i++)
     {
-        decryptedMessage += (char)(decryptedMessageArray[i] + 65);
+        if (decryptedMessageArray[i] == -1)
+        {
+            decryptedMessage += " "; // Add spaces to the decrypted message
+        }
+        else
+        {
+            decryptedMessage += (char)(decryptedMessageArray[i] + 65);
+        }
     }
 
     // Return decryptedMessage

@@ -246,7 +246,6 @@ string decrypt(string message, string keyword)
             {
                 j = 0;
             }
-            userKeyArray[i];
             userKeyArray[i] = keyword[j];
             j++;
         }

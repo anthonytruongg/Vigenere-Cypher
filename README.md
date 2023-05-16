@@ -1,31 +1,36 @@
 # Vigenere-Cypher
-
 Vigenere Cypher project for CIS-7 Discrete Structures Class.
 
-# Development Branch
+## Authors
+- Anthony Truong
+- Nour Siwar
 
-# 05/04/2023 - Anthony Truong and Nour Siwar
+## Date Published 
+May 9th, 2023
 
-- Reviewed git flow commands.
+## General Description
+In this project, Team "Gigga Lyte," comprising Anthony Truong and Nour Siwar, will collaborate to complete the following assignment for the CIS 7 Discrete Structures class. Our objective is to demonstrate the practical application of the concepts we have learned throughout the semester, enabling us to solve specific problems that necessitate the use of mathematical techniques.
 
-# 05/09/2023 - Anthony Truong
+Given the above description of the Vigenère cipher, create a C++ program that encrypts and decrypts a message from the user. Test the program to verify that the output is accurate. Assess program limitations and provide documentation that entails programming approach for encryption and decryption.
 
-- Write up initial main and encrypt function.
-- Finished encrypt function flowchart.
+## Problems
+The problems associated with this project primarily pertain to user security. Given that the purpose of this program is to assist users in encrypting their sensitive information, the most significant challenge lies in employing appropriate and efficient encryption and decryption methods. Failing to implement the proper encryption program would render user information vulnerable to public access.
 
-- Build decryption function
-- Add menu functionality
-- Finished decrypt function flowchart.
+Specifically, the problems are:
+1. How will this program encrypt user information?
+2. How will this program decrypt user information?
+3. What are the program’s limitations?
 
-## What problems are you solving?
+## Programming Approach
+In order to create a program that encrypts and decrypts user information, the team will approach this project with the idea of a Vigenere Cipher in mind. The project does state that the Vigenere Cipher encryption method must be implemented, and so this will be the backbone of our solution to the given prompt.
 
-- The main problem when starting this project was to figure out how the encryption works under the hood. How does the plaintext get encrypted with the user provided keyword? How does the encryption itself work? What is vigenere cipher?
+Solutions:
+1. Create a user interface for user accessibility.
+2. Use encryption formula to encrypt information.
+3. Use decryption formula to decrypt information.
 
-## Provide explanation of calculations and algorithm implementation.
-
-- The program takes utilizes the encryption formula of: E = (P + K) mod 26.
-- In order to achieve the encryption, this formula must be implemented into the program. The encrypted message takes the "P" array of ASCII values and adds to it the "K" (keyword) array of ASCII values. After the sum if found, we do mod 26 to obtain a new ASCII value. After this ASCII value is found, you can add 65 to obtain all uppercase letters.
-- "E" represents the encrypted message array of ASCII values.
-- "P" represents the plain text array of ASCII values.
-- "K" represents the keyword array of ASCII values.
-- Must convert the encrypted message array characters. Failure to do so will present a blank output (due to the array holding ASCII values instead of actual char values).
+## Instructions to use
+1. Use an IDE such as Microsoft Visual Studio or Visual Studio Code (VSC).
+2. Clone this repo using: git clone https://github.com/anthonytruongg/Vigenere-Cypher.git
+3. Make sure your IDE supports the C++ language by using a C++ IDE or downloading extensions if necessary.
+4. Run program and have fun!

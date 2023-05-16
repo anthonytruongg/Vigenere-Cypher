@@ -1,61 +1,31 @@
 # Vigenere-Cypher
+
 Vigenere Cypher project for CIS-7 Discrete Structures Class.
 
-# Web Development Final Project - *ProfessorChoice*
+# Development Branch
 
-# Case Project Details
+# 05/04/2023 - Anthony Truong and Nour Siwar
 
-Vigenere Cipher is a method of encrypting alphabetic text. It uses a simple form of polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets. The encryption of the original text is done using the Vigenère square or Vigenère table. The table consists of the alphabets written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar
-Ciphers. At different points in the encryption process, the cipher uses a different alphabet from one of the rows.
-The alphabet used at each point depends on a repeating keyword
+- Reviewed git flow commands.
 
-## Example
+# 05/09/2023 - Anthony Truong
 
-Input (in plain text): "GEEKSFORGEEKS"
-Keyword: "AYUSH"
-Output (cipher text): "GCYCZFMLYLEI"
+- Write up initial main and encrypt function.
+- Finished encrypt function flowchart.
 
-# Project Prompt
+- Build decryption function
+- Add menu functionality
+- Finished decrypt function flowchart.
 
-- Create a C++ Program that will encrypt and decrypt a message from the user.
-- Test the program to veryify output is accurate. Assess any program limitations.
-- Provide proper documentation on programming approach for this project. Documentation should express understanding of encryption and decryption in a teamwork setting.
+## What problems are you solving?
 
-# Installation
+- The main problem when starting this project was to figure out how the encryption works under the hood. How does the plaintext get encrypted with the user provided keyword? How does the encryption itself work? What is vigenere cipher?
 
-Install via local terminal.
+## Provide explanation of calculations and algorithm implementation.
 
-```
-git clone https://github.com/anthonytruongg/Vigenere-Cypher.git
-```
-
-# Team "Gigga-Lyte"
-
-- Anthony Truong
-- Nour Siwar
-
-# Documentation
-
-## Goals
-
-- What problems are you solving in this project?
-- What is the program objectives? Explain how your program is interacting with the user and its purpose.
-
-## Solution
-
-- What solutions are you implementing in the project?
-
-## Calculations and Algorithm
-
-- Provide explanation of calculations and algorithm implementation.
-- How is discrete structures implemented in the C++ program?
-
-## Issues
-
-- What are the limitations of the program?
-- Provide recommendation on improving the limitations of the program.
-
-# Flowchart / Pseudocode
-
-- Write the pseudocode for the program, from start to finish. Be sure to include decision-making branching.
-- If you choose to do flowchart, use standard shapes for flowchart, be sure to include decision-making branching. You can use web-based tool such as Draw.io to build your flowchart.
+- The program takes utilizes the encryption formula of: E = (P + K) mod 26.
+- In order to achieve the encryption, this formula must be implemented into the program. The encrypted message takes the "P" array of ASCII values and adds to it the "K" (keyword) array of ASCII values. After the sum if found, we do mod 26 to obtain a new ASCII value. After this ASCII value is found, you can add 65 to obtain all uppercase letters.
+- "E" represents the encrypted message array of ASCII values.
+- "P" represents the plain text array of ASCII values.
+- "K" represents the keyword array of ASCII values.
+- Must convert the encrypted message array characters. Failure to do so will present a blank output (due to the array holding ASCII values instead of actual char values).
